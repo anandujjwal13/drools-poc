@@ -1,0 +1,106 @@
+package io.github.aasaru.drools.section10
+
+import io.github.aasaru.drools.domain.CustomObj;
+import java.time.LocalDate;
+
+rule "age of the business"
+	when
+		$cust: CustomObj((2019 - getIntValue("age") <= 1), getIntValue("age") > 1800  )
+	then
+		System.out.println(" NOT Eligible,age of the business " );
+
+end
+
+rule "number Of claims"
+
+	when
+		$cust: CustomObj(getStringValue("previousClaims") == "yes", hasField("previousClaimsCount"), getIntValue("previousClaimsCount") > 1 )
+	then
+		System.out.println(" previousClaimsCount");
+
+end
+
+
+
+rule "Seasonal Business"
+
+	when
+		$cust: CustomObj(getStringValue("isSeasonal") == "yes")
+	then
+		System.out.println(" seasonal business");
+
+end
+
+
+
+rule "Doughnut / grillOrFrier"
+
+	when
+		$cust: CustomObj(hasField("grillOrFrier"),getStringValue("grillOrFrier") == "yes",getStringValue("isDoughnut") == "no")
+	then
+		System.out.println("Doughnut / grillOrFrier");
+
+end
+
+rule "Delivery Service"
+
+	when
+		$cust: CustomObj(getStringValue("isDeliverable") == "yes")
+	then
+		System.out.println("Delivery Service");
+
+end
+
+
+
+rule "Sales of Location"
+
+	when
+		$cust: CustomObj(getIntValue("locationSales") < 0 || getIntValue("locationSales") > 200000000 )
+	then
+		System.out.println("Sales of Location");
+
+end
+
+rule "Building Limit"
+
+	when
+		$cust: CustomObj(getIntValue("buildingLimit") < 80000 || getIntValue("buildingLimit") > 110000 )
+	then
+		System.out.println("Building Limit");
+
+end
+
+
+rule "year of building"
+
+	when
+		$cust: CustomObj(getIntValue("yearBuilt") < 1950  )
+	then
+		System.out.println("year of building");
+
+end
+
+
+
+rule "distance to coast from this building"
+
+	when
+		$cust: CustomObj(getIntValue("distanceFromCoast") > 10  )
+	then
+		System.out.println("distance to coast from this building");
+
+end
+
+
+
+rule "isAlarmPresent"
+
+	when
+		$cust: CustomObj(getStringValue("isAlarmPresent") == "no"  )
+	then
+		System.out.println("isAlarmPresent");
+
+end
+
+

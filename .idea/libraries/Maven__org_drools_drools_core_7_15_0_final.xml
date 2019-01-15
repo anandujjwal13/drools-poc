@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.drools:drools-core:7.15.0.final">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/drools/drools-core/7.15.0.Final/drools-core-7.15.0.Final.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/drools/drools-core/7.15.0.final/drools-core-7.15.0.final-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/drools/drools-core/7.15.0.final/drools-core-7.15.0.final-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
